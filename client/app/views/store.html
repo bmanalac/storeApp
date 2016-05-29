@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <h1>{{store.title}}</h1>
+
+      <ul class="store-container">
+        <li class="category-list" ng-repeat="cat in store.categories">
+          <button class="btn btn-category" type="button" name="button">
+            <a ng-click="store.catTitle(cat.title)" ng-href="#/category/{{cat.slug}}">{{ cat.title }}</a>
+          </button>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

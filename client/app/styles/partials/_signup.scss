@@ -1,0 +1,26 @@
+
+// Custom signup form style
+.signup-container {
+  position: absolute;
+  width: 50%;
+  top: 60px;
+  left: 25%;
+  padding: 0 15px;
+  background-color: rgba(236, 240, 241, 0.9);
+  border: 1px solid $gray-light;
+  border-radius: 5px;
+  z-index: -1;
+  opacity: 0;
+}
+
+.signup-header {
+  text-align: center;
+  color: $gray-light;
+}
+
+@media only screen and (max-width: $screen-sm-min) {
+  .signup-container {
+    width: 70%;
+    left: 15%;
+  }
+}

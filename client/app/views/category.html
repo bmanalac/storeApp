@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <h1>{{ category.catData }}</h1>
+
+      <ul class="category-container">
+        <li class="product-list" ng-repeat="product in category.products">
+          <a ng-click="category.productSlug(product.slug)" ng-href="#/product/{{product.slug}}">{{ product.title }}</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

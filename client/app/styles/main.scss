@@ -1,0 +1,153 @@
+@import "variables";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+@import "navbar";
+@import "partials/signup";
+@import "partials/store";
+@import "partials/products";
+@import "partials/cart";
+@import "partials/checkout";
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: url('../images/banner.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: $gray-base;
+  padding: 0;
+  color: $gray-lighter;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s ease;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  z-index: -1;
+}
+.active {
+  opacity: 1;
+  z-index: 5;
+  transition: 1s ease;
+}
+
+.text--center {
+  text-align: center;
+}
+
+// global classes
+a { color: $gray-light; }
+a:hover { color: $gray-lighter; }
+hr { border-top: 1px solid #000 !important; }
+li { list-style: none; }
+
+// navbar right
+.right-side {
+  border-left: 1px solid #000;
+  float: right;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  position: absolute;
+  width: 100%;
+  // border-bottom: 1px solid #e5e5e5;
+  background-color: rgba(255,255,255,0.1);
+  margin-bottom: 0px;
+  z-index: 3;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+// Main container: will always be below nav
+// so it doesnt cutoff
+.main-container {
+  padding-top: 50px;
+}
+
+/* Custom page footer */
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: $gray-lighter;
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 0;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}

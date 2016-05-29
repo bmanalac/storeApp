@@ -1,0 +1,15 @@
+.cart-container {
+  width: 25%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid $brand-success;
+  border-radius: 5px;
+  margin-left: auto;
+  padding: 20px;
+}
+.cart-items {
+  list-style: none;
+}
+.cart-list {
+  margin: 5px 0;
+}

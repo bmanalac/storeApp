@@ -1,0 +1,30 @@
+<div class="cart-container">
+  <div class="row">
+
+    <h1>Cart</h1>
+
+    <ul class="cart-items">
+      <li ng-repeat="item in cart.items.contents" class="cart-list">
+        <a ng-href="#/product/{{item.id}}">{{ item.title }}</a>
+        <strong>{{ item.price | currency }}</strong>
+        <p>Quantity:
+          {{ item.quantity }}</p>
+        <p>Item total:
+          {{ item.quantity * item.price | currency}}</p>
+      </li>
+    </ul>
+
+    <div class="totes">
+      <h2>Total:</h2>
+      <h6>{{ cart.total.without_tax }}</h6>
+      <h6>Tax +
+        {{ cart.total.tax }}</h6>
+      <hr>
+      <h4>{{ cart.total.with_tax }}</h4>
+    </div>
+
+    <a ng-href="#/checkout">
+      <button type="button" name="button">Checkout</button>
+    </a>
+  </div>
+</div>
