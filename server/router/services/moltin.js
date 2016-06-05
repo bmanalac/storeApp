@@ -92,6 +92,7 @@
 
         // object{id: :id}
         let item = req.body.id;
+
         moltin.Cart.Insert(item, 1, null, function() {
 
           // Get new cart contents

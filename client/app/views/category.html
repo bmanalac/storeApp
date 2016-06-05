@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container" ng-controller="CategoryCtrl as category">
   <div class="row">
     <div class="col-md-12">
 
-      <h1>{{ category.catData }}</h1>
+      <h1>{{ category.name }}</h1>
 
       <ul class="category-container">
         <li class="product-list" ng-repeat="product in category.products">

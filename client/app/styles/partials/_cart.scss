@@ -1,15 +1,30 @@
 .cart-container {
-  width: 25%;
-  height: 100%;
+  position: fixed;
+  width: 30%;
+  height: calc(100% - 50px);
+  top: 50px;
+  right: 0;
   background-color: rgba(0, 0, 0, 0.9);
-  border: 1px solid $brand-success;
-  border-radius: 5px;
-  margin-left: auto;
+  border: 1px solid #04BF9D;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   padding: 20px;
+  z-index: 2;
 }
 .cart-items {
   list-style: none;
 }
 .cart-list {
   margin: 5px 0;
+}
+.btn-checkout {
+  position: fixed;
+  top: 90%;
+  color: #eeeeee;
+  background-color: #9b59b6;
+}
+@media only screen and (max-width: 800px) {
+  .cart-container {
+    width: 100%;
+  }
 }

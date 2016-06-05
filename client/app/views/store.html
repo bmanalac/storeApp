@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container" ng-controller="StoreCtrl as store">
+
   <div class="row">
     <div class="col-md-12">
-
-      <h1>{{store.title}}</h1>
+      <h1>Categories</h1>
 
       <ul class="store-container">
-        <li class="category-list" ng-repeat="cat in store.categories">
+        <li class="category-list" ng-repeat="category in store.categories">
           <button class="btn btn-category" type="button" name="button">
-            <a ng-click="store.catTitle(cat.title)" ng-href="#/category/{{cat.slug}}">{{ cat.title }}</a>
+            <a ng-click="store.title(category.title)" ng-href="#/category/{{category.slug}}">{{ category.title }}</a>
           </button>
         </li>
       </ul>

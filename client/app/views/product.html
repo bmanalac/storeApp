@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="ProductCtrl as product">
   <div class="product-wrapper">
     <div class="row">
       <div class="col-md-12">
@@ -20,7 +20,7 @@
         <div class="product-specs">
           <strong ng-repeat="info in product.info.specs">{{ info }}</strong>
           <strong ng-if="product.stock()">{{ product.info.stock }}</strong>
-          <strong class="sold-out" ng-if="!product.stock()">Sold Out!</strong>
+          <strong class="sold-out" ng-if="!product.stock()">{{ product.info.stock }}</strong>
         </div>
         <button ng-if="!product.addStatus" ng-click="product.addCart(product.info.id)" class="btn btn-custom">Add to Cart</button>
         <button ng-if="product.addStatus" class="btn btn-custom btn-custom-success">{{ product.addStatus }}</button>

@@ -10,14 +10,14 @@
    * Controller of the clientApp
    */
   angular.module('clientApp')
-    .controller('CategoryCtrl', function($rootScope, $localStorage, $http) {
-      let category = this;
+    .controller('CategoryCtrl', function($rootScope, $localStorage) {
+      var category = this;
 
       // get catgory name from selected category
-      category.catData = $localStorage.categoryName;
+      category.name = $localStorage.categoryName;
 
       // get products associated with that selected category
-      category.products = $localStorage.catProducts;
+      category.products = $localStorage.categoryProducts;
 
       // get product slug click event function
       category.productSlug = function(slug) {
@@ -30,7 +30,7 @@
 
             // then store product to rootScope
             // to pass in product.js
-            $rootScope.product = item;
+            $localStorage.product = item;
           }
         });
       };

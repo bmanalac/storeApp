@@ -31,7 +31,7 @@
           checkout.fields = fields.data;
 
           checkout.check = function(data) {
-            if (data != 'customer' && data != 'save_as' && data != 'company' && data != 'instructions') {
+            if (data !== 'customer' && data !== 'save_as' && data !== 'company' && data !== 'instructions') {
               return true;
             }
           };
