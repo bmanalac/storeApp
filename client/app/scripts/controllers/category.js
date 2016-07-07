@@ -1,39 +1,47 @@
 (function() {
-
   'use strict';
 
   /**
    * @ngdoc function
    * @name clientApp.controller:CategoryCtrl
+   * @name clientApp.directive:productList
    * @description
    * # CategoryCtrl
    * Controller of the clientApp
+   * directive of the clientApp
    */
   angular.module('clientApp')
-    .controller('CategoryCtrl', function($rootScope, $localStorage) {
-      var category = this;
+    .controller('CategoryCtrl', CategoryCtrl)
+    .directive('productList', productList);
 
-      // get catgory name from selected category
-      category.name = $localStorage.categoryName;
+  function CategoryCtrl($localStorage) {
+    // get catgory name from selected category
+    this.name = $localStorage.categoryName;
+  }
 
-      // get products associated with that selected category
-      category.products = $localStorage.categoryProducts;
+  function productList($localStorage) {
+    return {
+      restrict: 'E',
+      controller: function($scope) {
 
-      // get product slug click event function
-      category.productSlug = function(slug) {
+        // get products associated with that selected category
+        $scope.products = $localStorage.categoryProducts;
 
-        // iterate through category product list
-        angular.forEach(category.products, function(item) {
+        // get product slug click event function
+        $scope.productSlug = function(slug) {
 
-          // if category slug matches product slug
-          if (slug === item.slug) {
+          // iterate through category product list
+          angular.forEach($scope.products, function(product) {
 
-            // then store product to rootScope
-            // to pass in product.js
-            $localStorage.product = item;
-          }
-        });
-      };
-    });
+            // if category slug matches product slug
+            if (slug === product.slug) {
 
+              // then store product cookies
+              $localStorage.product = product;
+            }
+          });
+        }
+      }
+    };
+  }
 })();

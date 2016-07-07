@@ -3,7 +3,7 @@
 
   function signupShow() {
     // Define overlay classes
-    let active = 'active';
+    var active = 'active';
 
     // overlay && signup nav:btn class animation that will turn background
     // on/off when click event triggers

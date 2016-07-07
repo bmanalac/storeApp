@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="clientApp">
   <head>
     <meta charset="utf-8">
     <title>Title</title>
@@ -18,19 +18,15 @@
     <!-- endbuild -->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
   </head>
-  <body ng-app="clientApp">
-
+  <body>
     <!--[if lte IE 8]> <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
 
     <div class="overlay"></div>
-
-    <!-- app directives -->
-    <navbar-app>Navbar Loading...</navbar-app>
-    <signup-app>Signup Loading...</signup-app>
-    <cart>Cart Loading...</cart>
+    <app-navbar>Loading Navbar...</app-navbar>
+    <signup-app></signup-app>
+    <app-cart>Loading Cart...</app-cart>
     <!-- Initiate angular views -->
-    <div ng-view>Main App Loading...</div>
-
+    <div ng-view>Loading...</div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -69,7 +65,7 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/animations/animate.js"></script>
-    <!-- scripts/controllers/*.js -->
+    <!-- scripts/components/*.js -->
     <script src="scripts/controllers/navbar.js"></script>
     <script src="scripts/controllers/cart.js"></script>
     <script src="scripts/controllers/main.js"></script>

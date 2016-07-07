@@ -1,9 +1,6 @@
 (function() {
   'use strict';
 
-  function MainCtrl() {
-    this.title = 'main';
-  }
   /**
    * @ngdoc function
    * @name clientApp.controller:MainCtrl
@@ -13,4 +10,8 @@
    */
   angular.module('clientApp')
     .controller('MainCtrl', MainCtrl);
+
+  function MainCtrl() {
+    this.title = 'main';
+  }
 })();

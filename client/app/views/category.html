@@ -1,15 +1,22 @@
 <div class="container" ng-controller="CategoryCtrl as category">
+
   <div class="row">
-    <div class="col-md-12">
-
+    <div class="col-md-12 text--center">
       <h1>{{ category.name }}</h1>
-
-      <ul class="category-container">
-        <li class="product-list" ng-repeat="product in category.products">
-          <a ng-click="category.productSlug(product.slug)" ng-href="#/product/{{product.slug}}">{{ product.title }}</a>
-        </li>
-      </ul>
-
     </div>
   </div>
+
+  <div class="row">
+    <product-list>
+      <a
+        ng-repeat="product in products"
+        ng-click="productSlug(product.slug)"
+        class="col-sm-6 text--center btn-store"
+        href="#/product/{{product.slug}}"
+        >
+        {{ product.title }}
+      </a>
+    </product-list>
+  </div>
+
 </div>

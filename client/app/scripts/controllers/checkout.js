@@ -11,7 +11,7 @@
    */
   angular.module('clientApp')
     .controller('CheckoutCtrl', function($rootScope, $localStorage, $http) {
-      var checkout = this;
+      let checkout = this;
 
       checkout.data = {
         bill: {},

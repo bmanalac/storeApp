@@ -48,10 +48,10 @@ body {
 }
 // global classes
 a {
-  color: $gray-light;
+  color: $gray-base;
 }
 a:hover {
-  color: $gray-lighter;
+  text-decoration: none;
 }
 hr {
   border-top: 1px solid #fff !important;
@@ -60,18 +60,24 @@ hr {
 li {
   list-style: none;
 }
-.btn-custom {
-  color: $gray-lighter;
-  background-color: #9b59b6;
-  width: 100%;
-  border-radius: 5px;
-  margin-top: 5px;
+/** Main app button layout */
+.btn-store {
+  text-align: center;
+  background-color: #fff;
+  padding: 5em;
+  border-radius: 1px;
+  border: 1px solid #000;
+  cursor: pointer;
   &:hover {
-    background-color: #8e44ad;
+    transition: 0.5s ease-in;
+    background-color: $brand-success;
+    border: 1px solid #fff;
+    color: #fff;
+    a {
+      transition: 0.5s ease-in-out;
+      color: #fff;
+    }
   }
-}
-.btn-custom-success {
-  background-color: #f1c40f !important;
 }
 // navbar right
 .right-side {

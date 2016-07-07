@@ -1,17 +1,21 @@
-<div class="container" ng-controller="StoreCtrl as store">
+<div class="container">
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 text--center">
       <h1>Categories</h1>
-
-      <ul class="store-container">
-        <li class="category-list" ng-repeat="category in store.categories">
-          <button class="btn btn-category" type="button" name="button">
-            <a ng-click="store.title(category.title)" ng-href="#/category/{{category.slug}}">{{ category.title }}</a>
-          </button>
-        </li>
-      </ul>
-
     </div>
+  </div>
+
+  <div class="row">
+    <category-list>
+      <a
+        ng-repeat="category in categories"
+        ng-click="getCategory(category.title)"
+        class="col-sm-6 text--center btn-store"
+        href="#/category/{{category.slug}}"
+        >
+        {{ category.title }}
+      <a>
+    </category-list>
   </div>
 </div>

@@ -1,7 +1,16 @@
 (function() {
   'use strict';
 
-  function cart($rootScope, $localStorage) {
+  /**
+   * @ngdoc directive
+   * @name clientApp.directive:cart
+   * @description
+   * # cart
+   */
+  angular.module('clientApp')
+    .directive('appCart', cartDirective);
+
+  function cartDirective($rootScope, $localStorage) {
     return {
       templateUrl: 'views/cart.html',
       restrict: 'E',
@@ -9,7 +18,6 @@
 
         // get cart data function
         function getCart() {
-
           // if localStorage === empty then store rootScope data
           // in localStorage to save our items when page is refreshed
           if ($localStorage.cart === undefined) {
@@ -28,8 +36,6 @@
 
         // instantiate data function: get cart data
         getCart();
-
-
         // function add(price, duration) {
         //   var value = 0,
         //     counter = setInterval(function() {
@@ -42,13 +48,4 @@
       }
     };
   }
-
-  /**
-   * @ngdoc directive
-   * @name clientApp.directive:cart
-   * @description
-   * # cart
-   */
-  angular.module('clientApp')
-    .directive('cart', cart);
 })();

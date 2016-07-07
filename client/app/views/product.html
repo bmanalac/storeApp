@@ -1,31 +1,42 @@
-<div class="container" ng-controller="ProductCtrl as product">
-  <div class="product-wrapper">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="product-title">{{ product.info.title }}</h1>
-      </div>
+<div class="container text--center" ng-controller="ProductCtrl as product">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="product-title">{{ product.item.title }}</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <img class="product-image" src="{{product.item.images[0].url.http}}" alt="{{product.item.title}}"/>
     </div>
 
-    <div class="row">
-      <div class="col-sm-6">
-        <img class="product-image" src="{{product.info.image}}" alt="{{product.info.title}}"/>
-      </div>
-
-      <div class="col-sm-6">
+    <div class="col-sm-6">
+      <product-spec>
         <div class="product-description">
           <p>Description:
-            {{ product.info.description }}
+            {{ item.description }}
           </p>
         </div>
         <div class="product-specs">
-          <strong ng-repeat="info in product.info.specs">{{ info }}</strong>
-          <strong ng-if="product.stock()">{{ product.info.stock }}</strong>
-          <strong class="sold-out" ng-if="!product.stock()">{{ product.info.stock }}</strong>
+          <strong ng-repeat="info in info.specs">{{ info }}</strong>
+          <strong ng-if="product.stock()">{{ info.stock }}</strong>
+          <strong class="sold-out" ng-if="!stock()">{{ info.stock }}</strong>
         </div>
-        <button ng-if="!product.addStatus" ng-click="product.addCart(product.info.id)" class="btn btn-custom">Add to Cart</button>
-        <button ng-if="product.addStatus" class="btn btn-custom btn-custom-success">{{ product.addStatus }}</button>
-      </div>
-
+        <button
+          ng-if="!addStatus"
+          ng-click="addCart(info.id)"
+          class="btn btn-custom"
+          >
+          Add to Cart
+        </button>
+        <button
+          ng-if="addStatus"
+          class="btn btn-custom btn-custom-success"
+          >
+          {{ addStatus }}
+        </button>
+      </product-spec>
     </div>
   </div>
 </div>

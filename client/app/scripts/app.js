@@ -1,28 +1,6 @@
 (function() {
   'use strict';
 
-  // initial run function
-  function run(moltinService, $rootScope, $localStorage) {
-    // moltinService.get[Cart, Categories, Products] methods
-    // then pass in a callback function to use our data
-    moltinService.getCart()
-      .then(function(cart) {
-        // we will pass in our data into rootScope,
-        // if localStorage === empty otherwise don't
-        // get api data if storage !== empty
-        if ($localStorage.cart === undefined) {
-          $rootScope.cart = cart.data;
-        }
-      });
-    moltinService.getCategories()
-      .then(function(categories) {
-        $localStorage.categories = categories.data;
-      });
-    moltinService.getProducts()
-      .then(function(products) {
-        $localStorage.products = products.data;
-      });
-  }
   /**
    * @ngdoc overview
    * @name clientApp
@@ -68,5 +46,28 @@
           redirectTo: '/'
         });
     })
-    .run(run);
+    .run(function(moltinService, $rootScope, $localStorage) {
+      // moltinService.get[Cart, Categories, Products] methods
+      // then pass in a callback function to use our data
+      moltinService
+        .getCart()
+        .then(function(cart) {
+          // we will pass in our data into rootScope,
+          // if localStorage === empty otherwise don't
+          // get api data if storage !== empty
+          if ($localStorage.cart === undefined) {
+            $rootScope.cart = cart.data;
+          }
+        });
+      moltinService
+        .getCategories()
+        .then(function(categories) {
+          $localStorage.categories = categories.data;
+        });
+      moltinService
+        .getProducts()
+        .then(function(products) {
+          $localStorage.products = products.data;
+        });
+    });
 })();
